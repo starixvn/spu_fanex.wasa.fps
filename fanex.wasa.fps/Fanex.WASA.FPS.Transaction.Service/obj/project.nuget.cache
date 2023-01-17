@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2PDGoBWdyGXNRCUYfBm627T0rdutrP9B3k1j9/U0ZihuFlEFts+12w8EHhNkkNw5nDbh+LXPoJNL9EbdTHg77Q==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\SPU\\fanex.wasa.fps\\fanex.wasa.fps\\Fanex.WASA.FPS.Transaction.Service\\Fanex.WASA.FPS.Transaction.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\terry.nguyen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\terry.nguyen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

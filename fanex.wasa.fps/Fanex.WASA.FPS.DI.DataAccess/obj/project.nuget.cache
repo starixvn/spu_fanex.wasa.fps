@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MX0hFgVs74FSmaj2SMy74DS1CyKiFkiKYdrt2F15eotGvW6TKgeaHYzS4+K8dPqMuRJ0oJ6DAAz9lYpzk8DDZw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\SPU\\fanex.wasa.fps\\fanex.wasa.fps\\Fanex.WASA.FPS.DI.DataAccess\\Fanex.WASA.FPS.DI.DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\terry.nguyen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\terry.nguyen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
