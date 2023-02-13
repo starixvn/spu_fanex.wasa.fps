@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace fanex.wasa.fps.webservice.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("wf")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,7 +23,7 @@ namespace fanex.wasa.fps.webservice.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("get")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

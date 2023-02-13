@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Functions>
+  <Function Name="Test">
+    <Setting Key="FPS_FP_Core_Offset_Get" SpName="FPS_FP_Core_Offset_Get" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
+  </Function>
+  <Function Name="DI">
+    <Setting Key="FPS_DC_DeviceIdentity_Insert" SpName="FPS_DC_DeviceIdentity_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
+  </Function>
+</Functions>

@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.WASA.FPS.DI.DataAccess\Fanex.WASA.FPS.DI.DataAccess.csproj" />
+    <ProjectReference Include="..\Fanex.WASA.FPS.DI.Model\Fanex.WASA.FPS.DI.Model.csproj" />
+  </ItemGroup>
+
 </Project>
