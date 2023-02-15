@@ -20,8 +20,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Models
 
         public string Screen { get; set; }
 
-        [JsonConverter(typeof(MonitorConverter))]
-        public long? Monitor { get; set; }
+        public string Monitor { get; set; }
 
         public string Fonts { get; set; }
 

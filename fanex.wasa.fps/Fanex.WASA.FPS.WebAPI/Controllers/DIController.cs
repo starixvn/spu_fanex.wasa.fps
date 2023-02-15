@@ -1,10 +1,7 @@
-﻿using fanex.wasa.fps.webservice;
+﻿using Fanex.WASA.FPS.DI.Model;
 using Fanex.WASA.FPS.DI.Service;
-using Fanex.WASA.FPS.DI.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
 {
@@ -12,17 +9,43 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
     [Route("api/di")]
     public class DIController : ControllerBase
     {
-        private IOffsetService _offsetService;
+        private IDeviceIdentityService _deviceIdentityService;
 
-        public DIController(IOffsetService offsetService)
+        public DIController(IDeviceIdentityService deviceIdentityService)
         {
-            _offsetService = offsetService;
+            _deviceIdentityService = deviceIdentityService;
         }
 
         [HttpPost("insert")]
-        public void InsertDI([FromBody] DeviceDetection data)
+        public void InsertDI([FromBody] DeviceDetectionEntity data)
         {
-            var a = "Hello world!";
+            try
+            {
+                if (data != null)
+                {
+                    _deviceIdentityService.InsertDeviceIdentity(data);
+                }
+            }
+            catch (Exception ex)
+            {
+                var err = ex.Message;
+            }
+        }
+
+        [HttpPost("insert-details")]
+        public void InsertDIDetails([FromBody] DeviceDetectionDetailsEntity data)
+        {
+            try
+            {
+                if (data != null)
+                {
+                    _deviceIdentityService.InsertDeviceIdentityDetails(data);
+                }
+            }
+            catch (Exception ex)
+            {
+                var err = ex.Message;
+            }
         }
 
         [HttpGet("hc")]

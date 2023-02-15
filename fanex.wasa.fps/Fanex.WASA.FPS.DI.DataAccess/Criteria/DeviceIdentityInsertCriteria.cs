@@ -6,7 +6,7 @@ namespace Fanex.WASA.FPS.DI.DataAccess.Criteria
     public class DeviceIdentityInsertCriteria : NonQueryCommand
     {
         [SpParam(SqlParamName = "ip_DeviceId")]
-        public string OffsetName { get; set; }
+        public string DeviceId { get; set; }
 
         [SpParam(SqlParamName = "ip_DeviceCode")]
         public string DeviceCode { get; set; }
@@ -89,16 +89,16 @@ namespace Fanex.WASA.FPS.DI.DataAccess.Criteria
         [SpParam(SqlParamName = "ip_DomainSameReferrer")]
         public bool DomainSameReferrer { get; set; }
 
-        [SpParam(SqlParamName = "ip_HasDetail")]
+        [SpParam(SqlParamName = "op_HasDetail")]
         public bool HasDetail { get; set; }
 
-        [SpParam(SqlParamName = "ip_DeviceIdIns")]
+        [SpParam(SqlParamName = "op_DeviceIdIns")]
         public string DeviceIdIns { get; set; }
 
-        [SpParam(SqlParamName = "ip_Error")]
+        [SpParam(SqlParamName = "op_Error")]
         public string Error { get; set; }
 
-        [SpParam(SqlParamName = "ip_Msg")]
+        [SpParam(SqlParamName = "op_Msg")]
         public string Msg { get; set; }
 
         public override string GetSettingKey()

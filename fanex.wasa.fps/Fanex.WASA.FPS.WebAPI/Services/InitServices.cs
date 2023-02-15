@@ -9,8 +9,8 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
     {
         public static void RegisterService(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IOffsetDataAccess, OffsetDataAccess>();
-            services.AddSingleton<IOffsetService, OffsetService>();
+            services.AddSingleton<IDeviceIdentityDataAccess, DeviceIdentityDataAccess>();
+            services.AddSingleton<IDeviceIdentityService, DeviceIdentityService>();
         }
     }
 }
