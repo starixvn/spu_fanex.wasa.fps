@@ -2,7 +2,7 @@ FROM hub.nexdev.net/base/dotnet/core/sdk:7.0 AS builder
 
 WORKDIR /src
 
-COPY ["./src/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service"]
+COPY ["./src/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service/"]
 
 COPY ["./src/Fanex.WASA.FPS.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.WebAPI/"]
 
