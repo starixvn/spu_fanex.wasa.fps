@@ -1,8 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Ultilities\**" />
+    <Content Remove="Ultilities\**" />
+    <EmbeddedResource Remove="Ultilities\**" />
+    <None Remove="Ultilities\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
@@ -20,10 +27,6 @@
     <None Update="App_Data\PROD\SPNames.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Ultilities\" />
   </ItemGroup>
 
 
