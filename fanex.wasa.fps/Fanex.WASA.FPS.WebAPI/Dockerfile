@@ -1,4 +1,4 @@
-FROM hub.nexdev.net/base/dotnet/core/sdk:7.0-alpine AS builder
+FROM hub.nexdev.net/base/dotnet/core/sdk:7.0 AS builder
 
 WORKDIR /src
 
@@ -16,7 +16,7 @@ COPY ./fanex.wasa.fps/Fanex.WASA.FPS.WebAPI .
 
 RUN dotnet publish -r linux-x64 --self-contained false -c Release -o /app
 
-FROM hub.nexdev.net/base/dotnet/core/aspnet:7.0-alpine AS base
+FROM hub.nexdev.net/base/dotnet/core/aspnet:7.0 AS base
 
 WORKDIR /app
 
