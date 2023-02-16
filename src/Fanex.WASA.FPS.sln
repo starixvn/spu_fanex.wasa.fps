@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.DI.WebAPI", "Fanex.WASA.FPS.WebAPI\Fanex.WASA.FPS.DI.WebAPI.csproj", "{341CE745-0231-49F5-A0F9-6FD3506D0089}"
 EndProject
@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.DI.Service",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.Transaction.Service", "Fanex.WASA.FPS.Transaction.Service\Fanex.WASA.FPS.Transaction.Service.csproj", "{21FB76DF-6596-4E07-94CB-95B93519C622}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.WASA.FPS.Transaction.WorkerService", "Fanex.WASA.FPS.Transaction.WorkerService\Fanex.WASA.FPS.Transaction.WorkerService.csproj", "{ED4CC869-E592-48BB-95E8-8FA6A769DC8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.Transaction.WorkerService", "Fanex.WASA.FPS.Transaction.WorkerService\Fanex.WASA.FPS.Transaction.WorkerService.csproj", "{ED4CC869-E592-48BB-95E8-8FA6A769DC8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.WASA.FPS.Core", "Fanex.WASA.FPS.Core\Fanex.WASA.FPS.Core.csproj", "{0219A4CF-8211-479C-880E-E854756B91CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{ED4CC869-E592-48BB-95E8-8FA6A769DC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4CC869-E592-48BB-95E8-8FA6A769DC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED4CC869-E592-48BB-95E8-8FA6A769DC8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0219A4CF-8211-479C-880E-E854756B91CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0219A4CF-8211-479C-880E-E854756B91CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0219A4CF-8211-479C-880E-E854756B91CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0219A4CF-8211-479C-880E-E854756B91CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

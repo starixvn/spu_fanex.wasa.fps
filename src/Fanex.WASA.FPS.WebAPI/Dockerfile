@@ -2,17 +2,17 @@ FROM hub.nexdev.net/base/dotnet/core/sdk:7.0 AS builder
 
 WORKDIR /src
 
-COPY ["./fanex.wasa.fps/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service"]
+COPY ["./src/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service"]
 
-COPY ["./fanex.wasa.fps/Fanex.WASA.FPS.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.WebAPI/"]
+COPY ["./src/Fanex.WASA.FPS.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.WebAPI/"]
 
-WORKDIR "/fanex.wasa.fps/Fanex.WASA.FPS.WebAPI"
+WORKDIR "/src/Fanex.WASA.FPS.WebAPI"
 
 RUN dotnet nuget add source http://nuget.nexdev.net/api/v2
 
 RUN dotnet restore -v n
 
-COPY ./fanex.wasa.fps/Fanex.WASA.FPS.WebAPI .
+COPY ./src/Fanex.WASA.FPS.WebAPI .
 
 RUN dotnet publish -r linux-x64 --self-contained false -c Release -o /app
 
