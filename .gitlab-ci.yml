@@ -1,0 +1,4 @@
+include:
+  - project: "ci/repos-ci/spu_fps_di_web_api"
+    ref: master
+    file: "gitlab-ci.yml"
