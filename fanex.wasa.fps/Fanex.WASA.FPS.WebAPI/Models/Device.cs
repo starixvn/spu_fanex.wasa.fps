@@ -1,5 +1,4 @@
-﻿using Fanex.WASA.FPS.DI.WebAPI.Ultilities;
-using System;
+﻿using System;
 using System.Text.Json.Serialization;
 
 namespace Fanex.WASA.FPS.DI.WebAPI.Models

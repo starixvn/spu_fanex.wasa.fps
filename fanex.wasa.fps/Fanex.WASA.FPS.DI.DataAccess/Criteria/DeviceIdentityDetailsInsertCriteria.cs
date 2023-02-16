@@ -41,8 +41,8 @@ namespace Fanex.WASA.FPS.DI.DataAccess.Criteria
         [SpParam(SqlParamName = "ip_Headers")]
         public string Headers { get; set; }
 
-        [SpParam(SqlParamName = "op_DeviceIdIns")]
-        public string DeviceIdIns { get; set; }
+        [SpParam(SqlParamName = "op_DeviceCodeIns")]
+        public string DeviceCodeIns { get; set; }
 
         [SpParam(SqlParamName = "op_Error")]
         public string Error { get; set; }

@@ -81,7 +81,7 @@ namespace Fanex.WASA.FPS.DI.DataAccess
 
                 Msg = null,
                 Error = null,
-                DeviceIdIns = null
+                DeviceCodeIns = null
             };
             repository.Execute(criteria);
         }

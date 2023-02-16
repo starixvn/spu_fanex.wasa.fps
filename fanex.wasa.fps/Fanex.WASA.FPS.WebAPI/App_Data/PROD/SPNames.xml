@@ -1,1 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Functions>
+  <Function Name="DI">
+    <Setting Key="FPS_DC_DeviceIdentity_Insert" SpName="FPS_DC_DeviceIdentity_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
+    <Setting Key="FPS_DC_DeviceIdentity_Details_Insert" SpName="FPS_DC_DeviceIdentity_Details_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
+  </Function>
+</Functions>
