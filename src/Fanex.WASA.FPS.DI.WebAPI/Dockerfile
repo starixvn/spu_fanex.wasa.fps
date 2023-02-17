@@ -4,9 +4,13 @@ WORKDIR /src
 
 COPY ["./src/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service/"]
 
-COPY ["./src/Fanex.WASA.FPS.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.WebAPI/"]
+COPY ["./src/Fanex.WASA.FPS.DI.DataAccess", "Fanex.WASA.FPS.DI.DataAccess/"]
 
-WORKDIR "/src/Fanex.WASA.FPS.WebAPI"
+COPY ["./src/Fanex.WASA.FPS.DI.Model", "Fanex.WASA.FPS.DI.Model/"]
+
+COPY ["./src/Fanex.WASA.FPS.DI.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.DI.WebAPI/"]
+
+WORKDIR "/src/Fanex.WASA.FPS.DI.WebAPI"
 
 RUN dotnet nuget add source http://nuget.nexdev.net/api/v2
 
@@ -29,4 +33,4 @@ COPY --from=builder /app .
 
 ENV TZ="America/La_Paz"
 
-ENTRYPOINT ["dotnet", "Fanex.WASA.FPS.WebAPI.dll"]
+ENTRYPOINT ["dotnet", "Fanex.WASA.FPS.DI.WebAPI.dll"]

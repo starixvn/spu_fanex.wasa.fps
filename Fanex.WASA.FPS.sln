@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.DI.WebAPI", "src\Fanex.WASA.FPS.WebAPI\Fanex.WASA.FPS.DI.WebAPI.csproj", "{341CE745-0231-49F5-A0F9-6FD3506D0089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanex.WASA.FPS.DI.WebAPI", "src\Fanex.WASA.FPS.DI.WebAPI\Fanex.WASA.FPS.DI.WebAPI.csproj", "{341CE745-0231-49F5-A0F9-6FD3506D0089}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{0F0498C3-D4AA-430A-B033-0684482113E5}"
 EndProject
