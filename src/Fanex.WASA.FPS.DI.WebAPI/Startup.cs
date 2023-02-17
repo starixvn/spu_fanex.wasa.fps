@@ -37,6 +37,14 @@ namespace fanex.wasa.fps.webservice
             services.AddSingleton<IAppSettings>(appSettings);
             services.AddSingleton<ILogger, Logger>();
 
+            services.AddCors(opt =>
+            {
+                opt.AddDefaultPolicy(builder => builder
+                    .WithOrigins("*")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
+            });
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -85,6 +93,8 @@ namespace fanex.wasa.fps.webservice
             });
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

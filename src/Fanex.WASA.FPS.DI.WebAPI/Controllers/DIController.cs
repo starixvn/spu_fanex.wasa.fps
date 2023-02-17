@@ -1,12 +1,9 @@
-﻿using Fanex.Data.Repository;
-using Fanex.Logging;
+﻿using Fanex.Logging;
 using Fanex.WASA.FPS.DI.Model;
 using Fanex.WASA.FPS.DI.Service;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
 using System;
-using System.Net.WebSockets;
 
 namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
 {
@@ -38,7 +35,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
                     _deviceIdentityService.InsertDeviceIdentity(model);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.Error(ex.Message);
             }
