@@ -16,7 +16,7 @@ RUN dotnet nuget add source http://nuget.nexdev.net/api/v2
 
 RUN dotnet restore -v n
 
-COPY ./src/Fanex.WASA.FPS.WebAPI .
+COPY ./src/Fanex.WASA.FPS.DI.WebAPI .
 
 RUN dotnet publish -r linux-x64 --self-contained false -c Release -o /app
 
