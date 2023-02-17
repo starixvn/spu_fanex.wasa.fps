@@ -12,8 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fanex.Logging.Sentry" Version="1.0.7" />
+    <PackageReference Include="Fanex.Logging" Version="2.0.1" />
+    <PackageReference Include="Fanex.Logging.Extensions.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Fanex.Logging.Extensions.Database" Version="1.0.8" />
+    <PackageReference Include="Fanex.Logging.Sentry.RavenClient" Version="1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="SharpRaven" Version="2.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 

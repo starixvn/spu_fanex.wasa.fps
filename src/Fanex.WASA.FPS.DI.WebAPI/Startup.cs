@@ -1,6 +1,12 @@
 using Fanex.Data;
 using Fanex.Data.MySql;
+using Fanex.Logging;
+using Fanex.Logging.Extensions;
+using Fanex.Logging.Extensions.AspNetCore;
+using Fanex.Logging.Extensions.Database;
+using Fanex.Logging.Sentry.RavenClient;
 using Fanex.WASA.FPS.DI.WebAPI;
+using Fanex.WASA.FPS.DI.WebAPI.Middleware;
 using Fanex.WASA.FPS.DI.WebAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -9,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using SharpRaven;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace fanex.wasa.fps.webservice
@@ -27,6 +35,7 @@ namespace fanex.wasa.fps.webservice
         {
             var appSettings = new AppSettings(Configuration);
             services.AddSingleton<IAppSettings>(appSettings);
+            services.AddSingleton<ILogger, Logger>();
 
             services.AddControllers();
 
@@ -39,6 +48,20 @@ namespace fanex.wasa.fps.webservice
 
             services.RegisterService(Configuration);
             FanexDataConfig(appSettings);
+
+            LogManager
+           .SetDefaultLogCategory("Fanex.WASA.FPS.DI.WebAPI")
+           .Use(new List<ILogEngine>
+           {
+                     new SentryLogging(new SentryEngineOptions
+                     {
+                         Dsn = new Dsn(appSettings.SentryDsn)
+                     })
+           });
+
+            ExceptionHandler
+                .UseConfig(new LoggingConfiguration())
+                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +73,8 @@ namespace fanex.wasa.fps.webservice
             }
 
             app.UseHttpsRedirection();
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "Fanex.WASA.FPS.DI.WebAPI v1"));

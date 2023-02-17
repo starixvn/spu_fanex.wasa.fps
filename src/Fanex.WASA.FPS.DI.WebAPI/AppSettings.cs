@@ -7,6 +7,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI
     public interface IAppSettings
     {
         string SPName { get; }
+        string SentryDsn { get; }
     }
 
     public class AppSettings : IAppSettings
@@ -15,14 +16,20 @@ namespace Fanex.WASA.FPS.DI.WebAPI
 
         private readonly string spName;
 
+        private readonly string sentryDsn;
+
         public AppSettings(IConfiguration configuration)
         {
             this.configuration = configuration;
 
             spName = GetValue<string>("AppConfig:SPName");
+
+            sentryDsn = GetValue<string>("Sentry:Dsn");
         }
 
         public string SPName => spName;
+
+        public string SentryDsn => sentryDsn;
 
         public T GetValue<T>(string key)
         {
