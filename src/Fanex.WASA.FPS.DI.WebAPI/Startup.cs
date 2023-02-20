@@ -6,6 +6,7 @@ using Fanex.Logging.Extensions.AspNetCore;
 using Fanex.Logging.Extensions.Database;
 using Fanex.Logging.Sentry.RavenClient;
 using Fanex.WASA.FPS.DI.WebAPI;
+using Fanex.WASA.FPS.DI.WebAPI.Extensions;
 using Fanex.WASA.FPS.DI.WebAPI.Middleware;
 using Fanex.WASA.FPS.DI.WebAPI.Services;
 using Microsoft.AspNetCore.Builder;
@@ -55,7 +56,8 @@ namespace fanex.wasa.fps.webservice
             services.AddHealthChecks();
 
             services.RegisterService(Configuration);
-            FanexDataConfig(appSettings);
+
+            //FanexDataConfig(appSettings);
 
             LogManager
            .SetDefaultLogCategory("Fanex.WASA.FPS.DI.WebAPI")
@@ -84,6 +86,8 @@ namespace fanex.wasa.fps.webservice
 
             app.UseMiddleware<ExceptionMiddleware>();
 
+            app.UserFanexDataWithMySql(Configuration);
+
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "Fanex.WASA.FPS.DI.WebAPI v1"));
 
@@ -104,23 +108,23 @@ namespace fanex.wasa.fps.webservice
             });
         }
 
-        private void FanexDataConfig(IAppSettings appSettings)
-        {
-            var connections = Configuration
-                                  .GetSection("AppConfig:Connections")
-                                  .GetChildren()
-                                  .AsEnumerable()
-                                  .ToDictionary(
-                                           x => x.GetValue<string>("Name"),
-                                           y => new ConnectionConfiguration(y.GetValue<string>("Name"), y.GetValue<string>("ConnectionString"), y.GetValue<string>("ProviderName"))
-                                   );
+        //private void FanexDataConfig(IAppSettings appSettings)
+        //{
+        //    var connections = Configuration
+        //                          .GetSection("AppConfig:Connections")
+        //                          .GetChildren()
+        //                          .AsEnumerable()
+        //                          .ToDictionary(
+        //                                   x => x.GetValue<string>("Name"),
+        //                                   y => new ConnectionConfiguration(y.GetValue<string>("Name"), y.GetValue<string>("ConnectionString"), y.GetValue<string>("ProviderName"))
+        //                           );
 
-            DbSettingProviderManager
-              .StartNewSession()
-              .Use(connections)
-              .WithMySql()
-              .UseDefaultDbSettingProvider(resourcePath: appSettings.SPName)
-              .Run();
-        }
+        //    DbSettingProviderManager
+        //      .StartNewSession()
+        //      .Use(connections)
+        //      .WithMySql()
+        //      .UseDefaultDbSettingProvider(resourcePath: appSettings.SPName)
+        //      .Run();
+        //}
     }
 }
