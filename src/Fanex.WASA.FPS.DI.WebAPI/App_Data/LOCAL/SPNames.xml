@@ -5,4 +5,7 @@
     <Setting Key="FPS_DC_DeviceIdentity_Insert" SpName="FPS_DC_DeviceIdentity_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
     <Setting Key="FPS_DC_DeviceIdentity_Details_Insert" SpName="FPS_DC_DeviceIdentity_Details_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
   </Function>
+  <Function Name="WinSite">
+    <Setting Key="FPS_SUB_Account_Insert" SpName="FPS_SUB_Account_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
+  </Function>
 </Functions>

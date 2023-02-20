@@ -23,16 +23,15 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
         [HttpPost("insert")]
         public void InsertDI([FromBody] string data)
         {
-            // var json = JsonConvert.SerializeObject(data);
-            _logger.Info("InsertDI" +
-                        "\r\nData: " + data);
-
             try
             {
                 if (data != null)
                 {
                     var model = JsonConvert.DeserializeObject<DeviceDetectionEntity>(data);
-                    _deviceIdentityService.InsertDeviceIdentity(model);
+                    if (model != null)
+                    {
+                        _deviceIdentityService.InsertDeviceIdentity(model);
+                    }
                 }
             }
             catch (Exception ex)
