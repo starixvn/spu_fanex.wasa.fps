@@ -57,8 +57,6 @@ namespace fanex.wasa.fps.webservice
 
             services.RegisterService(Configuration);
 
-            //FanexDataConfig(appSettings);
-
             LogManager
            .SetDefaultLogCategory("Fanex.WASA.FPS.DI.WebAPI")
            .Use(new List<ILogEngine>
@@ -106,25 +104,6 @@ namespace fanex.wasa.fps.webservice
             {
                 endpoints.MapControllers();
             });
-        }
-
-        //private void FanexDataConfig(IAppSettings appSettings)
-        //{
-        //    var connections = Configuration
-        //                          .GetSection("AppConfig:Connections")
-        //                          .GetChildren()
-        //                          .AsEnumerable()
-        //                          .ToDictionary(
-        //                                   x => x.GetValue<string>("Name"),
-        //                                   y => new ConnectionConfiguration(y.GetValue<string>("Name"), y.GetValue<string>("ConnectionString"), y.GetValue<string>("ProviderName"))
-        //                           );
-
-        //    DbSettingProviderManager
-        //      .StartNewSession()
-        //      .Use(connections)
-        //      .WithMySql()
-        //      .UseDefaultDbSettingProvider(resourcePath: appSettings.SPName)
-        //      .Run();
-        //}
+        }        
     }
 }
