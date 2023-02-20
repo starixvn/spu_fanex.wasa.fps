@@ -10,7 +10,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
-        public static IApplicationBuilder UserFanexDataWithMySql(this IApplicationBuilder app, IConfiguration configuration)
+        public static IApplicationBuilder UseFanexDataWithMySql(this IApplicationBuilder app, IConfiguration configuration)
         {
 
             var connections = configuration

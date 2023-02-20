@@ -86,7 +86,7 @@ namespace fanex.wasa.fps.webservice
 
             app.UseMiddleware<ExceptionMiddleware>();
 
-            app.UserFanexDataWithMySql(Configuration);
+            app.UseFanexDataWithMySql(Configuration);
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "Fanex.WASA.FPS.DI.WebAPI v1"));
