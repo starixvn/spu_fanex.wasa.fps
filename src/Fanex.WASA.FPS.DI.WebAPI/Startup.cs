@@ -55,21 +55,11 @@ namespace fanex.wasa.fps.webservice
 
             services.AddHealthChecks();
 
-            services.RegisterService(Configuration);
+            services.RegisterService();
 
-            LogManager
-           .SetDefaultLogCategory("Fanex.WASA.FPS.DI.WebAPI")
-           .Use(new List<ILogEngine>
-           {
-                     new SentryLogging(new SentryEngineOptions
-                     {
-                         Dsn = new Dsn(appSettings.SentryDsn)
-                     })
-           });
+            services.AddSentryLogs(appSettings);
 
-            ExceptionHandler
-                .UseConfig(new LoggingConfiguration())
-                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
+            services.AddExceptionHandler();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
