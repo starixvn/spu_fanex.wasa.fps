@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fanex.WASA.FPS.Account.Service\Fanex.WASA.FPS.Account.Service.csproj" />
+    <ProjectReference Include="..\Fanex.WASA.FPS.Association.Service\Fanex.WASA.FPS.Association.Service.csproj" />
     <ProjectReference Include="..\Fanex.WASA.FPS.Device.DataAccess\Fanex.WASA.FPS.Device.DataAccess.csproj" />
     <ProjectReference Include="..\Fanex.WASA.FPS.Device.Service\Fanex.WASA.FPS.Device.Service.csproj" />
     <ProjectReference Include="..\Fanex.WASA.FPS.DI.Service\Fanex.WASA.FPS.DI.Service.csproj" />

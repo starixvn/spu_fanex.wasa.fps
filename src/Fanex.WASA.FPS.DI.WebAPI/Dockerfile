@@ -2,6 +2,24 @@ FROM hub.nexdev.net/base/dotnet/core/sdk:7.0 AS builder
 
 WORKDIR /src
 
+COPY ["./src/Fanex.WASA.FPS.Account.Service", "Fanex.WASA.FPS.Account.Service/"]
+
+COPY ["./src/Fanex.WASA.FPS.Account.DataAccess", "Fanex.WASA.FPS.Account.DataAccess/"]
+
+COPY ["./src/Fanex.WASA.FPS.Account.Model", "Fanex.WASA.FPS.Account.Model/"]
+
+COPY ["./src/Fanex.WASA.FPS.Association.Service", "Fanex.WASA.FPS.Association.Service/"]
+
+COPY ["./src/Fanex.WASA.FPS.Association.DataAccess", "Fanex.WASA.FPS.Association.DataAccess/"]
+
+COPY ["./src/Fanex.WASA.FPS.Association.Model", "Fanex.WASA.FPS.Association.Model/"]
+
+COPY ["./src/Fanex.WASA.FPS.Device.Service", "Fanex.WASA.FPS.Device.Service/"]
+
+COPY ["./src/Fanex.WASA.FPS.Device.DataAccess", "Fanex.WASA.FPS.Device.DataAccess/"]
+
+COPY ["./src/Fanex.WASA.FPS.Device.Model", "Fanex.WASA.FPS.Device.Model/"]
+
 COPY ["./src/Fanex.WASA.FPS.DI.Service", "Fanex.WASA.FPS.DI.Service/"]
 
 COPY ["./src/Fanex.WASA.FPS.DI.DataAccess", "Fanex.WASA.FPS.DI.DataAccess/"]

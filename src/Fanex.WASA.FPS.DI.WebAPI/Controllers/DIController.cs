@@ -3,7 +3,6 @@ using Fanex.WASA.FPS.DI.Model.Entity;
 using Fanex.WASA.FPS.DI.Service;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System;
 
 namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
 {
@@ -23,20 +22,13 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
         [HttpPost("insert")]
         public void InsertDI([FromBody] string data)
         {
-            try
+            if (!string.IsNullOrEmpty(data))
             {
-                if (!string.IsNullOrEmpty(data))
+                var model = JsonConvert.DeserializeObject<DeviceDetectionEntity>(data);
+                if (model != null)
                 {
-                    var model = JsonConvert.DeserializeObject<DeviceDetectionEntity>(data);
-                    if (model != null)
-                    {
-                        _deviceIdentityService.InsertDeviceIdentity(model);
-                    }
+                    _deviceIdentityService.InsertDeviceIdentity(model);
                 }
-            }
-            catch (Exception ex)
-            {
-                _logger.Error(ex.Message);
             }
         }
 

@@ -23,20 +23,13 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
         [HttpPost("insert-device")]
         public void InsertDevice([FromBody] string data)
         {
-            try
+            if (!string.IsNullOrEmpty(data))
             {
-                if (!string.IsNullOrEmpty(data))
+                var model = JsonConvert.DeserializeObject<InsNewDeviceEntity>(data);
+                if (model != null)
                 {
-                    var model = JsonConvert.DeserializeObject<InsNewDeviceEntity>(data);
-                    if (model != null)
-                    {
-                        _deviceService.InsertNewDevice(model);
-                    }
+                    _deviceService.InsertNewDevice(model);
                 }
-            }
-            catch (Exception ex)
-            {
-                _logger.Error(ex.Message);
             }
         }
 

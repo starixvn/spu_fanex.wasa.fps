@@ -20,8 +20,8 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
             _accountService = accountService;
         }
 
-        [HttpPost("sub-account-insert")]
-        public void SubAccountInsert([FromBody] string data)
+        [HttpPost("insert-sub-account")]
+        public void InsertSubAccount([FromBody] string data)
         {
             if (!string.IsNullOrEmpty(data))
             {

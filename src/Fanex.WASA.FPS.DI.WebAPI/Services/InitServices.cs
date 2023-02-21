@@ -5,6 +5,8 @@ using Fanex.Logging.Extensions.Database;
 using Fanex.Logging.Sentry.RavenClient;
 using Fanex.WASA.FPS.Account.DataAccess;
 using Fanex.WASA.FPS.Account.Service;
+using Fanex.WASA.FPS.Association.DataAccess;
+using Fanex.WASA.FPS.Association.Service;
 using Fanex.WASA.FPS.Device.DataAccess;
 using Fanex.WASA.FPS.Device.Service;
 using Fanex.WASA.FPS.DI.DataAccess;
@@ -43,6 +45,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
             RegisterDeviceIdentityService(services);
             RegisterDeviceService(services);
             RegisterAccountService(services);
+            RegisterAssociationService(services);
         }
 
         private static void RegisterDeviceIdentityService(this IServiceCollection services)
@@ -61,6 +64,12 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
         {
             services.AddSingleton<IAccountDataAccess, AccountDataAccess>();
             services.AddSingleton<IAccountService, AccountService>();
+        }
+
+        private static void RegisterAssociationService(this IServiceCollection services)
+        {
+            services.AddSingleton<IAssociationDataAccess, AssociationDataAccess>();
+            services.AddSingleton<IAssociationService, AssociationService>();
         }
 
     }
