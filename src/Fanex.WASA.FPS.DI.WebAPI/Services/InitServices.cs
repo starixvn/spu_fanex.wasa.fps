@@ -16,6 +16,12 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
     {
         public static void RegisterService(this IServiceCollection services)
         {
+            RegisterDeviceIdentityService(services);
+            RegisterWinSiteService(services);
+        }
+
+        private static void RegisterDeviceIdentityService(this IServiceCollection services)
+        {
             services.AddSingleton<IDeviceIdentityDataAccess, DeviceIdentityDataAccess>();
             services.AddSingleton<IDeviceIdentityService, DeviceIdentityService>();
         }
@@ -40,5 +46,12 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
                 .UseConfig(new LoggingConfiguration())
                 .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
         }
+
+        private static void RegisterWinSiteService(this IServiceCollection services)
+        {
+            services.AddSingleton<IWinSiteDataAccess, WinSiteDataAccess>();
+            services.AddSingleton<IWinSiteService, WinSiteService>();
+        }
+
     }
 }

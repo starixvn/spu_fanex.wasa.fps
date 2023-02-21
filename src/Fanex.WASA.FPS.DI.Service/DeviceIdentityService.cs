@@ -1,5 +1,5 @@
 ﻿using Fanex.WASA.FPS.DI.DataAccess;
-using Fanex.WASA.FPS.DI.Model;
+using Fanex.WASA.FPS.DI.Model.Entity;
 
 namespace Fanex.WASA.FPS.DI.Service
 {

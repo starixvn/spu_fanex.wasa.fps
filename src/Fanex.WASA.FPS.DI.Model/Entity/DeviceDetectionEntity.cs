@@ -1,4 +1,4 @@
-﻿namespace Fanex.WASA.FPS.DI.Model
+﻿namespace Fanex.WASA.FPS.DI.Model.Entity
 {
     public class DeviceDetectionEntity
     {

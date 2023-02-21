@@ -1,6 +1,6 @@
 ﻿using Fanex.Data.Repository;
 using Fanex.WASA.FPS.DI.DataAccess.Criteria;
-using Fanex.WASA.FPS.DI.Model;
+using Fanex.WASA.FPS.DI.Model.Entity;
 
 namespace Fanex.WASA.FPS.DI.DataAccess
 {

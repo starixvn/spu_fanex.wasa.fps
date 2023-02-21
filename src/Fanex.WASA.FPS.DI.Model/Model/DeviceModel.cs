@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fanex.WASA.FPS.DI.Model
+namespace Fanex.WASA.FPS.DI.Model.Model
 {
     public class DeviceModel
     {

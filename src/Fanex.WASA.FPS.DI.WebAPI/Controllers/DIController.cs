@@ -1,5 +1,5 @@
 ﻿using Fanex.Logging;
-using Fanex.WASA.FPS.DI.Model;
+using Fanex.WASA.FPS.DI.Model.Entity;
 using Fanex.WASA.FPS.DI.Service;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -25,7 +25,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
         {
             try
             {
-                if (data != null)
+                if (!string.IsNullOrEmpty(data))
                 {
                     var model = JsonConvert.DeserializeObject<DeviceDetectionEntity>(data);
                     if (model != null)
