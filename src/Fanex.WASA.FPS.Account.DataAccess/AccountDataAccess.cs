@@ -1,19 +1,19 @@
 ﻿using Fanex.Data.Repository;
-using Fanex.WASA.FPS.DI.DataAccess.Criteria;
-using Fanex.WASA.FPS.DI.Model.Entity;
+using Fanex.WASA.FPS.Account.DataAccess.Criteria;
+using Fanex.WASA.FPS.Account.Model.Entity;
 
-namespace Fanex.WASA.FPS.DI.DataAccess
+namespace Fanex.WASA.FPS.Account.DataAccess
 {
-    public interface IWinSiteDataAccess
+    public interface IAccountDataAccess
     {
         void InsertSubAccount(InsAccountDetailEntity entity);
     }
 
-    public class WinSiteDataAccess : IWinSiteDataAccess
+    public class AccountDataAccess : IAccountDataAccess
     {
         private readonly IDynamicRepository repository;
 
-        public WinSiteDataAccess()
+        public AccountDataAccess()
         {
             repository = new DynamicRepository();
         }

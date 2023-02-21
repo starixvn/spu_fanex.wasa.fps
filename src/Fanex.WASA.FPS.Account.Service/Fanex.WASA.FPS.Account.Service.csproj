@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.WASA.FPS.Account.DataAccess\Fanex.WASA.FPS.Account.DataAccess.csproj" />
+    <ProjectReference Include="..\Fanex.WASA.FPS.Account.Model\Fanex.WASA.FPS.Account.Model.csproj" />
+  </ItemGroup>
+
+</Project>

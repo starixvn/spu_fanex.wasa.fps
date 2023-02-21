@@ -1,11 +1,14 @@
-﻿using Fanex.Logging.Extensions.AspNetCore;
-using Fanex.Logging.Extensions.Database;
+﻿using Fanex.Logging;
 using Fanex.Logging.Extensions;
+using Fanex.Logging.Extensions.AspNetCore;
+using Fanex.Logging.Extensions.Database;
 using Fanex.Logging.Sentry.RavenClient;
-using Fanex.Logging;
+using Fanex.WASA.FPS.Account.DataAccess;
+using Fanex.WASA.FPS.Account.Service;
+using Fanex.WASA.FPS.Device.DataAccess;
+using Fanex.WASA.FPS.Device.Service;
 using Fanex.WASA.FPS.DI.DataAccess;
 using Fanex.WASA.FPS.DI.Service;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SharpRaven;
 using System.Collections.Generic;
@@ -14,18 +17,6 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
 {
     public static class InitServices
     {
-        public static void RegisterService(this IServiceCollection services)
-        {
-            RegisterDeviceIdentityService(services);
-            RegisterWinSiteService(services);
-        }
-
-        private static void RegisterDeviceIdentityService(this IServiceCollection services)
-        {
-            services.AddSingleton<IDeviceIdentityDataAccess, DeviceIdentityDataAccess>();
-            services.AddSingleton<IDeviceIdentityService, DeviceIdentityService>();
-        }
-
         public static void AddSentryLogs(this IServiceCollection services, IAppSettings appSettings)
         {
             LogManager
@@ -40,17 +31,36 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
         }
 
         public static void AddExceptionHandler(this IServiceCollection services)
-        {            
+        {
 
             ExceptionHandler
                 .UseConfig(new LoggingConfiguration())
                 .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
         }
 
-        private static void RegisterWinSiteService(this IServiceCollection services)
+        public static void RegisterService(this IServiceCollection services)
         {
-            services.AddSingleton<IWinSiteDataAccess, WinSiteDataAccess>();
-            services.AddSingleton<IWinSiteService, WinSiteService>();
+            RegisterDeviceIdentityService(services);
+            RegisterDeviceService(services);
+            RegisterAccountService(services);
+        }
+
+        private static void RegisterDeviceIdentityService(this IServiceCollection services)
+        {
+            services.AddSingleton<IDeviceIdentityDataAccess, DeviceIdentityDataAccess>();
+            services.AddSingleton<IDeviceIdentityService, DeviceIdentityService>();
+        }
+
+        private static void RegisterDeviceService(this IServiceCollection services)
+        {
+            services.AddSingleton<IDeviceDataAccess, DeviceDataAccess>();
+            services.AddSingleton<IDeviceService, DeviceService>();
+        }
+
+        private static void RegisterAccountService(this IServiceCollection services)
+        {
+            services.AddSingleton<IAccountDataAccess, AccountDataAccess>();
+            services.AddSingleton<IAccountService, AccountService>();
         }
 
     }

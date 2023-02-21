@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fanex.WASA.FPS.DI.Model.Entity
+namespace Fanex.WASA.FPS.Account.Model.Entity
 {
     public class InsAccountDetailEntity
     {
