@@ -11,4 +11,7 @@
   <Function Name="Association">
     <Setting Key="FPS_SUB_Association_Insert" SpName="FPS_SUB_Association_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
   </Function>
+  <Function Name="Transaction">
+    <Setting Key="FPS_SUB_Transaction_Insert" SpName="FPS_SUB_Transaction_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
+  </Function>
 </Functions>

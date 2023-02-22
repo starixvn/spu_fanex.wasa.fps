@@ -26,6 +26,12 @@ COPY ["./src/Fanex.WASA.FPS.DI.DataAccess", "Fanex.WASA.FPS.DI.DataAccess/"]
 
 COPY ["./src/Fanex.WASA.FPS.DI.Model", "Fanex.WASA.FPS.DI.Model/"]
 
+COPY ["./src/Fanex.WASA.FPS.Transaction.Service", "Fanex.WASA.FPS.Transaction.Service/"]
+
+COPY ["./src/Fanex.WASA.FPS.Transaction.DataAccess", "Fanex.WASA.FPS.Transaction.DataAccess/"]
+
+COPY ["./src/Fanex.WASA.FPS.Transaction.Model", "Fanex.WASA.FPS.Transaction.Model/"]
+
 COPY ["./src/Fanex.WASA.FPS.DI.WebAPI/Fanex.WASA.FPS.DI.WebAPI.csproj", "Fanex.WASA.FPS.DI.WebAPI/"]
 
 WORKDIR "/src/Fanex.WASA.FPS.DI.WebAPI"
