@@ -1,7 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.WASA.FPS.Transaction.DataAccess\Fanex.WASA.FPS.Transaction.DataAccess.csproj" />
+  </ItemGroup>
 
 </Project>

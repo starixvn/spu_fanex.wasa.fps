@@ -11,6 +11,8 @@ using Fanex.WASA.FPS.Device.DataAccess;
 using Fanex.WASA.FPS.Device.Service;
 using Fanex.WASA.FPS.DI.DataAccess;
 using Fanex.WASA.FPS.DI.Service;
+using Fanex.WASA.FPS.Evidence.DataAccess;
+using Fanex.WASA.FPS.Evidence.Service;
 using Fanex.WASA.FPS.Transaction.DataAccess;
 using Fanex.WASA.FPS.Transaction.Service;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,6 +51,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
             RegisterAccountService(services);
             RegisterAssociationService(services);
             RegisterTransactionService(services);
+            RegisterEvidenceService(services);
         }
 
         private static void RegisterDeviceIdentityService(this IServiceCollection services)
@@ -79,6 +82,12 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
         {
             services.AddSingleton<ITransactionDataAccess, TransactionDataAccess>();
             services.AddSingleton<ITransactionService, TransactionService>();
+        }
+
+        private static void RegisterEvidenceService(this IServiceCollection services)
+        {
+            services.AddSingleton<IEvidenceDataAccess, EvidenceDataAccess>();
+            services.AddSingleton<IEvidenceService, EvidenceService>();
         }
 
     }
