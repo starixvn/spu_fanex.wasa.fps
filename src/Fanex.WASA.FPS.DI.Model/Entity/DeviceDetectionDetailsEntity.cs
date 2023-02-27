@@ -2,28 +2,57 @@
 {
     public class DeviceDetectionDetailsEntity
     {
-        public string DeviceCode { get; set; }
+        private readonly string deviceCode;
+        private readonly string navigator;
+        private readonly string plugins;
+        private readonly string mimeTypes;
+        private readonly string userAgent;
+        private readonly string screen;
+        private readonly string os;
+        private readonly string browser;
+        private readonly string engine;
+        private readonly string deviceName;
+        private readonly string accept;
+        private readonly string headers;
 
-        public string Navigator { get; set; }
+        public DeviceDetectionDetailsEntity(string deviceCode, string navigator, string plugins, string mimeTypes, string userAgent, string screen, string os, string browser, string engine, string deviceName, string accept, string headers)
+        {
+            this.deviceCode = deviceCode;
+            this.navigator = navigator;
+            this.plugins = plugins;
+            this.mimeTypes = mimeTypes;
+            this.userAgent = userAgent;
+            this.screen = screen;
+            this.os = os;
+            this.browser = browser;
+            this.engine = engine;
+            this.deviceName = deviceName;
+            this.accept = accept;
+            this.headers = headers;
+        }
 
-        public string Plugins { get; set; }
+        public string DeviceCode => deviceCode;
 
-        public string MimeTypes { get; set; }
+        public string Navigator => navigator;
 
-        public string UserAgent { get; set; }
+        public string Plugins => plugins;
 
-        public string Screen { get; set; }
+        public string MimeTypes => mimeTypes;
 
-        public string Os { get; set; }
+        public string UserAgent => userAgent;
 
-        public string Browser { get; set; }
+        public string Screen => screen;
 
-        public string Engine { get; set; }
+        public string Os => os;
 
-        public string DeviceName { get; set; }
+        public string Browser => browser;
 
-        public string Accept { get; set; }
+        public string Engine => engine;
 
-        public string Headers { get; set; }
+        public string DeviceName => deviceName;
+
+        public string Accept => accept;
+
+        public string Headers => headers;
     }
 }

@@ -4,20 +4,41 @@ namespace Fanex.WASA.FPS.Evidence.Model.Entity
 {
     public class InsertSubEvidenceEntity
     {
-        public int? ItemId { get; set; }
+        private readonly int? itemId;
+        private readonly string itemValue;
+        private readonly int itemType;
+        private readonly int eviId;
+        private readonly int levelId;
+        private readonly int subscriberId;
+        private readonly DateTime affectedDate;
+        private readonly byte eviSource;
 
-        public string ItemValue { get; set; }
+        public InsertSubEvidenceEntity(int? itemId, string itemValue, int itemType, int eviId, int levelId, int subscriberId, DateTime affectedDate, byte eviSource)
+        {
+            this.itemId = itemId;
+            this.itemValue = itemValue;
+            this.itemType = itemType;
+            this.eviId = eviId;
+            this.levelId = levelId;
+            this.subscriberId = subscriberId;
+            this.affectedDate = affectedDate;
+            this.eviSource = eviSource;
+        }
 
-        public int ItemType { get; set; }
+        public int? ItemId => itemId;
 
-        public int EviId { get; set; }
+        public string ItemValue => itemValue;
 
-        public int LevelId { get; set; }
+        public int ItemType => itemType;
 
-        public int SubscriberId { get; set; }
+        public int EviId => eviId;
 
-        public DateTime AffectedDate { get; set; }
+        public int LevelId => levelId;
 
-        public byte EviSource { get; set; }
+        public int SubscriberId => subscriberId;
+
+        public DateTime AffectedDate => affectedDate;
+
+        public byte EviSource => eviSource;
     }
 }

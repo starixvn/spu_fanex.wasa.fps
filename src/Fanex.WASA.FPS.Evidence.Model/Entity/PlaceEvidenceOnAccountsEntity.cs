@@ -4,22 +4,45 @@ namespace Fanex.WASA.FPS.Evidence.Model.Entity
 {
     public class PlaceEvidenceOnAccountsEntity
     {
-        public string AccountIds { get; set; }
+        private readonly string accountIds;
+        private readonly string accountNames;
+        private readonly byte itemType;
+        private readonly int eviId;
+        private readonly int levelId;
+        private readonly int subscriberId;
+        private readonly bool isRetract;
+        private readonly DateTime affectedDate;
+        private readonly byte eviSource;
 
-        public string AccountNames { get; set; }
+        public PlaceEvidenceOnAccountsEntity(string accountIds, string accountNames, byte itemType, int eviId, int levelId, int subscriberId, bool isRetract, DateTime affectedDate, byte eviSource)
+        {
+            this.accountIds = accountIds;
+            this.accountNames = accountNames;
+            this.itemType = itemType;
+            this.eviId = eviId;
+            this.levelId = levelId;
+            this.subscriberId = subscriberId;
+            this.isRetract = isRetract;
+            this.affectedDate = affectedDate;
+            this.eviSource = eviSource;
+        }
 
-        public byte ItemType { get; set; }
+        public string AccountIds => accountIds;
 
-        public int EviId { get; set; }
+        public string AccountNames => accountNames;
 
-        public int LevelId { get; set; }
+        public byte ItemType => itemType;
 
-        public int SubscriberId { get; set; }
+        public int EviId => eviId;
 
-        public bool IsRetract { get; set; }
+        public int LevelId => levelId;
 
-        public DateTime AffectedDate { get; set; }
+        public int SubscriberId => subscriberId;
 
-        public byte EviSource { get; set; }
+        public bool IsRetract => isRetract;
+
+        public DateTime AffectedDate => affectedDate;
+
+        public byte EviSource => eviSource;
     }
 }

@@ -4,14 +4,29 @@ namespace Fanex.WASA.FPS.Association.Model.Entity
 {
     public class InsNewAssociationEntity
     {
-        public int AccountId { get; set; }
+        private readonly int accountId;
+        private readonly int? deviceId;
+        private readonly DateTime createdDate;
+        private readonly DateTime lastAccessedDate;
+        private readonly int fpsAssId;
 
-        public int? DeviceId { get; set; }
+        public InsNewAssociationEntity(int accountId, int? deviceId, DateTime createdDate, DateTime lastAccessedDate, int fpsAssId)
+        {
+            this.accountId = accountId;
+            this.deviceId = deviceId;
+            this.createdDate = createdDate;
+            this.lastAccessedDate = lastAccessedDate;
+            this.fpsAssId = fpsAssId;
+        }
 
-        public DateTime CreatedDate { get; set; }
+        public int AccountId => accountId;
 
-        public DateTime LastAccessedDate { get; set; }
+        public int? DeviceId => deviceId;
 
-        public int FpsAssId { get; set; }
+        public DateTime CreatedDate => createdDate;
+
+        public DateTime LastAccessedDate => lastAccessedDate;
+
+        public int FpsAssId => fpsAssId;
     }
 }

@@ -4,22 +4,45 @@ namespace Fanex.WASA.FPS.Evidence.Model.Entity
 {
     public class PlaceEvidenceOnDevicesEntity
     {
-        public string DeviceIds { get; set; }
+        private readonly string deviceIds;
+        private readonly string deviceNos;
+        private readonly byte itemType;
+        private readonly int eviId;
+        private readonly int levelId;
+        private readonly int subscriberId;
+        private readonly bool isRetract;
+        private readonly DateTime affectedDate;
+        private readonly byte eviSource;
 
-        public string DeviceNos { get; set; }
+        public PlaceEvidenceOnDevicesEntity(string deviceIds, string deviceNos, byte itemType, int eviId, int levelId, int subscriberId, bool isRetract, DateTime affectedDate, byte eviSource)
+        {
+            this.deviceIds = deviceIds;
+            this.deviceNos = deviceNos;
+            this.itemType = itemType;
+            this.eviId = eviId;
+            this.levelId = levelId;
+            this.subscriberId = subscriberId;
+            this.isRetract = isRetract;
+            this.affectedDate = affectedDate;
+            this.eviSource = eviSource;
+        }
 
-        public byte ItemType { get; set; }
+        public string DeviceIds => deviceIds;
 
-        public int EviId { get; set; }
+        public string DeviceNos => deviceNos;
 
-        public int LevelId { get; set; }
+        public byte ItemType => itemType;
 
-        public int SubscriberId { get; set; }
+        public int EviId => eviId;
 
-        public bool IsRetract { get; set; }
+        public int LevelId => levelId;
 
-        public DateTime AffectedDate { get; set; }
+        public int SubscriberId => subscriberId;
 
-        public byte EviSource { get; set; }
+        public bool IsRetract => isRetract;
+
+        public DateTime AffectedDate => affectedDate;
+
+        public byte EviSource => eviSource;
     }
 }

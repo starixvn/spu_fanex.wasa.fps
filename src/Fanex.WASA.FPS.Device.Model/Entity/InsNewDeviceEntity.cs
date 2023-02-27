@@ -4,24 +4,48 @@ namespace Fanex.WASA.FPS.Device.Model.Entity
 {
     public class InsNewDeviceEntity
     {
-        public string DeviceNo { get; set; }
+        private readonly string deviceNo;
+        private readonly int deviceType;
+        private readonly string osName;
+        private readonly int subscriberId;
+        private readonly string deviceCode;
+        private readonly string browser;
+        private readonly long pluginId;
+        private readonly DateTime createdDate;
+        private readonly int deviceId;
+        private readonly DateTime capturedDate;
 
-        public int DeviceType { get; set; }
+        public InsNewDeviceEntity(string deviceNo, int deviceType, string osName, int subscriberId, string deviceCode, string browser, long pluginId, DateTime createdDate, int deviceId)
+        {
+            this.deviceNo = deviceNo;
+            this.deviceType = deviceType;
+            this.osName = osName;
+            this.subscriberId = subscriberId;
+            this.deviceCode = deviceCode;
+            this.browser = browser;
+            this.pluginId = pluginId;
+            this.createdDate = createdDate;
+            this.deviceId = deviceId;
+        }
 
-        public string OsName { get; set; }
+        public string DeviceNo => deviceNo;
 
-        public int SubscriberId { get; set; }
+        public int DeviceType => deviceType;
 
-        public string DeviceCode { get; set; }
+        public string OsName => osName;
 
-        public string Browser { get; set; }
+        public int SubscriberId => subscriberId;
 
-        public long PluginId { get; set; }
+        public string DeviceCode => deviceCode;
 
-        public DateTime CreatedDate { get; set; }
+        public string Browser => browser;
 
-        public int DeviceId { get; set; }
+        public long PluginId => pluginId;
 
-        public DateTime CapturedDate { get; set; }
+        public DateTime CreatedDate => createdDate;
+
+        public int DeviceId => deviceId;
+
+        public DateTime CapturedDate => capturedDate;
     }
 }

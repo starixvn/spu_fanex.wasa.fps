@@ -1,5 +1,4 @@
-﻿using Fanex.Logging;
-using Fanex.WASA.FPS.Account.Model.Entity;
+﻿using Fanex.WASA.FPS.Account.Model.Entity;
 using Fanex.WASA.FPS.Account.Service;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
