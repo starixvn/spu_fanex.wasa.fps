@@ -5,4 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fanex.WASA.FPS.Subcriber.Model\Fanex.WASA.FPS.Subcriber.Model.csproj" />
+  </ItemGroup>
+
 </Project>

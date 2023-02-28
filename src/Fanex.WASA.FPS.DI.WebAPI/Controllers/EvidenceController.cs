@@ -8,7 +8,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/evidence")]
-    public class EvidenceController
+    public class EvidenceController : ControllerBase
     {
         private readonly IEvidenceService _evidenceService;
 

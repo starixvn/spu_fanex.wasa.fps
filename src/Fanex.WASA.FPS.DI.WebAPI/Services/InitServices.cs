@@ -13,6 +13,8 @@ using Fanex.WASA.FPS.DI.DataAccess;
 using Fanex.WASA.FPS.DI.Service;
 using Fanex.WASA.FPS.Evidence.DataAccess;
 using Fanex.WASA.FPS.Evidence.Service;
+using Fanex.WASA.FPS.Subcriber.DataAccess;
+using Fanex.WASA.FPS.Subcriber.Service;
 using Fanex.WASA.FPS.Transaction.DataAccess;
 using Fanex.WASA.FPS.Transaction.Service;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,6 +54,7 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
             RegisterAssociationService(services);
             RegisterTransactionService(services);
             RegisterEvidenceService(services);
+            RegisterSubcriberService(services);
         }
 
         private static void RegisterDeviceIdentityService(this IServiceCollection services)
@@ -88,6 +91,12 @@ namespace Fanex.WASA.FPS.DI.WebAPI.Services
         {
             services.AddSingleton<IEvidenceDataAccess, EvidenceDataAccess>();
             services.AddSingleton<IEvidenceService, EvidenceService>();
+        }
+
+        private static void RegisterSubcriberService(this IServiceCollection services)
+        {
+            services.AddSingleton<ISubcriberDataAccess, SubcriberDataAccess>();
+            services.AddSingleton<ISubcriberService, SubcriberService>();
         }
 
     }

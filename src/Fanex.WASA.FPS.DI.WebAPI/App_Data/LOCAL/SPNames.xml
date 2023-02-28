@@ -6,12 +6,46 @@
     <Setting Key="FPS_DC_DeviceIdentity_Details_Insert" SpName="FPS_DC_DeviceIdentity_Details_Insert" DbName="MySQL.FPS_DataCenter.fpsWebAdmin"/>
   </Function>
   <Function Name="Account">
-    <Setting Key="FPS_SUB_Account_Insert" SpName="FPS_SUB_Account_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
+    <Setting Key="FPS_SUB_Account_Insert" SpName="FPS_SUB_Account_Insert" DbName="MySQL.FPS_SUB_Alpha.fpsServiceAdmin"/>
+    <Setting Key="FPS_SUB_Account_GetByUserName" SpName="FPS_SUB_Account_GetByUserName" DbName="MySQL.FPS_SUB_Alpha.fpsService">
+      <Mapping DataField="AccountID" ObjectProperty="Id" Class="AccountEntity"/>
+      <Mapping DataField="UserName" ObjectProperty="UserName" Class="AccountEntity"/>
+      <Mapping DataField="UserName2" ObjectProperty="UserName2" Class="AccountEntity"/>
+      <Mapping DataField="CreatedDate" ObjectProperty="CreatedDate" Class="AccountEntity"/>
+
+      <Mapping DataField="SubscriberID" ObjectProperty="Id" Class="SubscriberEntity"/>
+      <Mapping DataField="SubscriberName" ObjectProperty="Name" Class="SubscriberEntity"/>
+
+      <Mapping DataField="EviId" ObjectProperty="Id" Class="Evidence"/>
+      <Mapping DataField="EviGroupId" ObjectProperty="GroupId" Class="Evidence"/>
+      <Mapping DataField="EviCode" ObjectProperty="Code" Class="Evidence"/>
+      <Mapping DataField="LevelID" ObjectProperty="Level" Class="Evidence"/>
+      <Mapping DataField="AffectedDate" ObjectProperty="AffectedDate" Class="Evidence"/>
+      <Mapping DataField="EviSource" ObjectProperty="Source" Class="Evidence"/>
+    </Setting>
   </Function>
   <Function Name="Association">
-    <Setting Key="FPS_SUB_Association_Insert" SpName="FPS_SUB_Association_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
+    <Setting Key="FPS_SUB_Association_Insert" SpName="FPS_SUB_Association_Insert" DbName="MySQL.FPS_SUB_Alpha.fpsServiceAdmin"/>
   </Function>
   <Function Name="Transaction">
-    <Setting Key="FPS_SUB_Transaction_Insert" SpName="FPS_SUB_Transaction_Insert" DbName="MySQL.FPS_Sub_Alpha.fpsServiceAdmin"/>
+    <Setting Key="FPS_SUB_Transaction_Insert" SpName="FPS_SUB_Transaction_Insert" DbName="MySQL.FPS_SUB_Alpha.fpsServiceAdmin"/>
+  </Function>
+  <Function Name="Subscriber">
+    <Setting Key="FPS_DC_Subscriber_GetByKey" SpName="FPS_DC_Subscriber_GetByKey" DbName="MySQL.FPS_DataCenter.fpsService">
+      <Mapping DataField="SubscriberId" ObjectProperty="Id"/>
+      <Mapping DataField="SubscriberName" ObjectProperty="Name"/>
+      <Mapping DataField="EnableSysId" ObjectProperty="EnableSysId"/>
+      <Mapping DataField="EnableRuleSet" ObjectProperty="EnableRuleSet"/>
+      <Mapping DataField="IsActive" ObjectProperty="Enable"/>
+      <Mapping DataField="IsTest" ObjectProperty="IsTest"/>
+
+      <Mapping DataField="SubscriberID_Trusty" ObjectProperty="SubscriberId"/>
+      <Mapping DataField="IsActive" ObjectProperty="Enable"/>
+      <Mapping DataField="EviGroupIds" ObjectProperty="EviGroupIds"/>
+      <Mapping DataField="EviCodeIds" ObjectProperty="EviCodeIds"/>
+
+      <Mapping DataField="ActionId" ObjectProperty="Id"/>
+      <Mapping DataField="ActionName" ObjectProperty="Name"/>
+    </Setting>
   </Function>
 </Functions>

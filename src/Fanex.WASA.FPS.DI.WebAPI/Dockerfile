@@ -32,6 +32,12 @@ COPY ["./src/Fanex.WASA.FPS.Evidence.DataAccess", "Fanex.WASA.FPS.Evidence.DataA
 
 COPY ["./src/Fanex.WASA.FPS.Evidence.Model", "Fanex.WASA.FPS.Evidence.Model/"]
 
+COPY ["./src/Fanex.WASA.FPS.Subcriber.Service", "Fanex.WASA.FPS.Subcriber.Service/"]
+
+COPY ["./src/Fanex.WASA.FPS.Subcriber.DataAccess", "Fanex.WASA.FPS.Subcriber.DataAccess/"]
+
+COPY ["./src/Fanex.WASA.FPS.Subcriber.Model", "Fanex.WASA.FPS.Subcriber.Model/"]
+
 COPY ["./src/Fanex.WASA.FPS.Transaction.Service", "Fanex.WASA.FPS.Transaction.Service/"]
 
 COPY ["./src/Fanex.WASA.FPS.Transaction.DataAccess", "Fanex.WASA.FPS.Transaction.DataAccess/"]
